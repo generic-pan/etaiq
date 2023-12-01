@@ -1,0 +1,37 @@
+body {
+    margin-top: 50px;
+}
+
+#row1 {
+    margin-top: 30px;
+}
+
+
+.accordion {
+    margin-left: 10%;
+}
+
+
+.card {
+    width: 70%;
+    margin-left: 5%;
+    margin-top: 15px;
+    background-color: #e7f1ff;
+}
+
+.accordion-button {
+    background-color: #f0f0f0;
+}
+
+.accordion-item {
+    margin-top: 15px;
+}
+.custom-input {
+    background-color: #f0f0f0; /* Light gray background */
+    border: none; /* Remove default border */
+  }
+
+label {
+    margin-bottom: 10px;
+}
+  

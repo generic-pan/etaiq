@@ -1,0 +1,102 @@
+<head>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css'>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+<h3 style="text-align: center;">Pencil your search fund math quickly!</h3>
+<div class="row" id="row1">
+    <div class="col-8">
+        <div class="accordion" id="accordionExample">
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingOne">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        Fundamentals&nbsp;&nbsp;<i class="fa fa-money-bill"></i>
+                    </button>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col">
+                                <div class="form-group">
+                                    <label for="name">Purchase Price</label>
+                                    <input type="number" class="form-control custom-input" id="pp" name="pp">
+                                </div>
+                                </div>
+                                <div class="col">
+                                <div class="form-group">
+                                    <label for="age">EBITDA (Cashflow)</label>
+                                    <input type="number" class="form-control custom-input" id="ebitda" name="ebitda">
+                                </div>
+                                </div>
+                            </div>               
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+        <div class="accordion" id="accordionExample2">
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingTwo">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                        Debt Makeup&nbsp;&nbsp;<i class="fa fa-landmark"></i>
+                    </button>
+                </h2>
+                <div id="collapseTwo" class="accordion-collapse collapse show" aria-labelledby="headingTwo" data-bs-parent="#accordionExample2">
+                    <div class="accordion-body">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col">
+                                <div class="form-group">
+                                    <label for="name">Loan Percentage (%)</label>
+                                    <input type="number" min="0" max="100" class="form-control custom-input" id="lp" name="lp">
+                                </div>
+                                </div>
+                                <div class="col">
+                                <div class="form-group">
+                                    <label for="age">Loan IR (%)</label>
+                                    <input type="number" min="0" value="8" max="100" class="form-control custom-input" id="lir" name="lir">
+                                </div>
+                                </div>
+                            </div>               
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-4">
+        <div class="card">
+            <div class="card-body" id="ana-text">
+              <h5 class="card-title" style="color:darkslategray">Analysis&nbsp;&nbsp;<i class="fa fa-cash-register"></i></h5>
+              <p class="card-text">Please fill out all fields to get an analysis!</p>
+            </div>
+          </div>
+    </div>
+</div>
+
+<script src='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.min.js'></script>
+<script>
+    function checkFields() {
+        var textField1 = document.getElementById('pp').value;
+        var textField2 = document.getElementById('ebitda').value;
+        var textField3 = document.getElementById('lp').value;
+        var textField4 = document.getElementById('lir').value;
+        var resultDiv = document.getElementById('ana-text');
+        if (textField1 !== '' && textField2 !== '' && textField3 !== '' && textField4 !== '') {
+            resultDiv.innerHTML = `<h5 class="card-title" style="color:darkslategray">Analysis&nbsp;&nbsp;<i class="fa fa-cash-register"></i></h5>
+            <h6 class="card-subtitle mb-2 text-muted" style="margin-top: 15px;">Purchase Multiple: ` + (textField1 / textField2).toFixed(2) + `</h6>
+            <h6 class="card-subtitle mb-2 text-muted"> Sellers Debt Percentage: ` + (100 - textField3) + `%</h6>    
+        </div>`;
+        }
+    }
+    
+    // Attach event listeners to each text field
+    document.getElementById('pp').addEventListener('input', checkFields);
+    document.getElementById('ebitda').addEventListener('input', checkFields);
+    document.getElementById('lp').addEventListener('input', checkFields);
+    document.getElementById('lir').addEventListener('input', checkFields);
+    
+</script>
+
